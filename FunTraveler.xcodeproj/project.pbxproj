@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		3A9E9CC52800912000C7B8D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CC42800912000C7B8D3 /* AppDelegate.swift */; };
 		3A9E9CC72800912000C7B8D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CC62800912000C7B8D3 /* SceneDelegate.swift */; };
-		3A9E9CC92800912000C7B8D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CC82800912000C7B8D3 /* ViewController.swift */; };
+		3A9E9CC92800912000C7B8D3 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CC82800912000C7B8D3 /* PlanDetailViewController.swift */; };
 		3A9E9CCC2800912000C7B8D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9E9CCA2800912000C7B8D3 /* Main.storyboard */; };
 		3A9E9CCE2800912300C7B8D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9E9CCD2800912300C7B8D3 /* Assets.xcassets */; };
 		3A9E9CD12800912300C7B8D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9E9CCF2800912300C7B8D3 /* LaunchScreen.storyboard */; };
+		3A9E9CD92800924B00C7B8D3 /* PlanPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CD82800924B00C7B8D3 /* PlanPickerViewController.swift */; };
+		3A9E9CDC280092E100C7B8D3 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CDB280092E100C7B8D3 /* UIScreen+Extension.swift */; };
+		3A9E9CDE2800931600C7B8D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CDD2800931600C7B8D3 /* UIColor+Extension.swift */; };
+		3A9E9CE02800935200C7B8D3 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CDF2800935200C7B8D3 /* UIStoryboard+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A9E9CC12800912000C7B8D3 /* FunTraveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunTraveler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9E9CC42800912000C7B8D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9E9CC62800912000C7B8D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A9E9CC82800912000C7B8D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A9E9CC82800912000C7B8D3 /* PlanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
 		3A9E9CCB2800912000C7B8D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A9E9CCD2800912300C7B8D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A9E9CD02800912300C7B8D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A9E9CD22800912300C7B8D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9E9CD82800924B00C7B8D3 /* PlanPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanPickerViewController.swift; sourceTree = "<group>"; };
+		3A9E9CDB280092E100C7B8D3 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		3A9E9CDD2800931600C7B8D3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		3A9E9CDF2800935200C7B8D3 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		3A9E9CC32800912000C7B8D3 /* FunTraveler */ = {
 			isa = PBXGroup;
 			children = (
+				3A9E9CDA280092D100C7B8D3 /* Extension */,
 				3A9E9CC42800912000C7B8D3 /* AppDelegate.swift */,
 				3A9E9CC62800912000C7B8D3 /* SceneDelegate.swift */,
-				3A9E9CC82800912000C7B8D3 /* ViewController.swift */,
+				3A9E9CC82800912000C7B8D3 /* PlanDetailViewController.swift */,
+				3A9E9CD82800924B00C7B8D3 /* PlanPickerViewController.swift */,
 				3A9E9CCA2800912000C7B8D3 /* Main.storyboard */,
 				3A9E9CCD2800912300C7B8D3 /* Assets.xcassets */,
 				3A9E9CCF2800912300C7B8D3 /* LaunchScreen.storyboard */,
 				3A9E9CD22800912300C7B8D3 /* Info.plist */,
 			);
 			path = FunTraveler;
+			sourceTree = "<group>";
+		};
+		3A9E9CDA280092D100C7B8D3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3A9E9CDB280092E100C7B8D3 /* UIScreen+Extension.swift */,
+				3A9E9CDD2800931600C7B8D3 /* UIColor+Extension.swift */,
+				3A9E9CDF2800935200C7B8D3 /* UIStoryboard+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A9E9CC92800912000C7B8D3 /* ViewController.swift in Sources */,
+				3A9E9CC92800912000C7B8D3 /* PlanDetailViewController.swift in Sources */,
+				3A9E9CDC280092E100C7B8D3 /* UIScreen+Extension.swift in Sources */,
+				3A9E9CD92800924B00C7B8D3 /* PlanPickerViewController.swift in Sources */,
+				3A9E9CDE2800931600C7B8D3 /* UIColor+Extension.swift in Sources */,
 				3A9E9CC52800912000C7B8D3 /* AppDelegate.swift in Sources */,
 				3A9E9CC72800912000C7B8D3 /* SceneDelegate.swift in Sources */,
+				3A9E9CE02800935200C7B8D3 /* UIStoryboard+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
