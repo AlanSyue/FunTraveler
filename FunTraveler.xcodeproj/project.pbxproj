@@ -15,6 +15,8 @@
 		3A73527F2801802A00B4D8D3 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7352792801802900B4D8D3 /* TimePickerView.swift */; };
 		3A7352802801802A00B4D8D3 /* PlanCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A73527A2801802900B4D8D3 /* PlanCardTableViewCell.swift */; };
 		3A7352812801802A00B4D8D3 /* PlanCardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A73527B2801802A00B4D8D3 /* PlanCardHeaderView.xib */; };
+		3A73528528019AC200B4D8D3 /* TrafficTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A73528328019AC200B4D8D3 /* TrafficTimeTableViewCell.swift */; };
+		3A73528628019AC200B4D8D3 /* TrafficTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A73528428019AC200B4D8D3 /* TrafficTimeTableViewCell.xib */; };
 		3A9E9CC52800912000C7B8D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CC42800912000C7B8D3 /* AppDelegate.swift */; };
 		3A9E9CC72800912000C7B8D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CC62800912000C7B8D3 /* SceneDelegate.swift */; };
 		3A9E9CC92800912000C7B8D3 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E9CC82800912000C7B8D3 /* PlanDetailViewController.swift */; };
@@ -38,6 +40,8 @@
 		3A7352792801802900B4D8D3 /* TimePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		3A73527A2801802900B4D8D3 /* PlanCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanCardTableViewCell.swift; sourceTree = "<group>"; };
 		3A73527B2801802A00B4D8D3 /* PlanCardHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanCardHeaderView.xib; sourceTree = "<group>"; };
+		3A73528328019AC200B4D8D3 /* TrafficTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficTimeTableViewCell.swift; sourceTree = "<group>"; };
+		3A73528428019AC200B4D8D3 /* TrafficTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrafficTimeTableViewCell.xib; sourceTree = "<group>"; };
 		3A9E9CC12800912000C7B8D3 /* FunTraveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunTraveler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9E9CC42800912000C7B8D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9E9CC62800912000C7B8D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				3A73527B2801802A00B4D8D3 /* PlanCardHeaderView.xib */,
 				3A73527A2801802900B4D8D3 /* PlanCardTableViewCell.swift */,
 				3A7352782801802900B4D8D3 /* PlanCardTableViewCell.xib */,
+				3A73528328019AC200B4D8D3 /* TrafficTimeTableViewCell.swift */,
+				3A73528428019AC200B4D8D3 /* TrafficTimeTableViewCell.xib */,
 				3A7352772801802900B4D8D3 /* SelectionView.swift */,
 				3A7352792801802900B4D8D3 /* TimePickerView.swift */,
 			);
@@ -222,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A73528628019AC200B4D8D3 /* TrafficTimeTableViewCell.xib in Resources */,
 				3A9E9CD12800912300C7B8D3 /* LaunchScreen.storyboard in Resources */,
 				3A9E9CCE2800912300C7B8D3 /* Assets.xcassets in Resources */,
 				3A73527E2801802A00B4D8D3 /* PlanCardTableViewCell.xib in Resources */,
@@ -279,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A73528528019AC200B4D8D3 /* TrafficTimeTableViewCell.swift in Sources */,
 				3A9E9CC92800912000C7B8D3 /* PlanDetailViewController.swift in Sources */,
 				3A9E9CDC280092E100C7B8D3 /* UIScreen+Extension.swift in Sources */,
 				3A73527228017FAB00B4D8D3 /* UITableView+Extension.swift in Sources */,

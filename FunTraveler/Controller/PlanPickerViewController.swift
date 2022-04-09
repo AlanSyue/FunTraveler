@@ -18,7 +18,7 @@ class PlanPickerViewController: UIViewController {
     ]
     var times = ["1小時", "1.5小時", "2小時", "2.5小時", "3小時", "3.5小時"]
 
-    var planCard = ["1","2","3","4","5"] {
+    var planCard = ["1", "2", "3", "4", "5"] {
         didSet {
             tableView.reloadData()
             scrollToBottom()
@@ -43,6 +43,8 @@ class PlanPickerViewController: UIViewController {
         super.viewDidLoad()
         tableView.registerHeaderWithNib(identifier: String(describing: PlanCardHeaderView.self), bundle: nil)
         tableView.registerCellWithNib(identifier: String(describing: PlanCardTableViewCell.self), bundle: nil)
+        tableView.registerCellWithNib(identifier: String(describing: TrafficTimeTableViewCell.self), bundle: nil)
+
         addScheduleButton()
 
     }
@@ -77,7 +79,6 @@ class PlanPickerViewController: UIViewController {
                 self.view.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
             }, completion: nil)
             
-
             zoomButton.setImage(UIImage.asset(.zoomIn), for: .selected)
             zoomButton.frame = CGRect(x: UIScreen.width - 170, y: 400, width: 50, height: 50)
             isMoveDown = false
@@ -122,16 +123,27 @@ extension PlanPickerViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row % 2 == 0 {
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: PlanCardTableViewCell.self), for: indexPath)
+                    as? PlanCardTableViewCell else { return UITableViewCell() }
+            
+            cell.selectionStyle = .none
+            cell.nameLabel.text = "景福宮"
+            cell.addressLabel.text = "保安三街8-1號"
+            cell.layoutCell(startTime: "09:30")
 
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: String(describing: PlanCardTableViewCell.self), for: indexPath)
-                as? PlanCardTableViewCell else { return UITableViewCell() }
-        cell.selectionStyle = .none
-        cell.nameLabel.text = "景福宮"
-        cell.addressLabel.text = "保安三街8-1號"
-        cell.layoutCell(startTime: "09:30")
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: TrafficTimeTableViewCell.self), for: indexPath)
+                    as? TrafficTimeTableViewCell else { return UITableViewCell() }
+            
+            cell.trafficTimeLabel.text = "開車時間"
 
-        return cell
+            return cell
+        }
+        
     }
 
     func scrollToBottom() {
