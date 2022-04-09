@@ -67,11 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				3A9E9CDA280092D100C7B8D3 /* Extension */,
+				3A9E9CE328010D4100C7B8D3 /* Controller */,
+				3A9E9CE428010D4C00C7B8D3 /* View */,
+				3A9E9CCA2800912000C7B8D3 /* Main.storyboard */,
 				3A9E9CC42800912000C7B8D3 /* AppDelegate.swift */,
 				3A9E9CC62800912000C7B8D3 /* SceneDelegate.swift */,
-				3A9E9CC82800912000C7B8D3 /* PlanDetailViewController.swift */,
-				3A9E9CD82800924B00C7B8D3 /* PlanPickerViewController.swift */,
-				3A9E9CCA2800912000C7B8D3 /* Main.storyboard */,
 				3A9E9CCD2800912300C7B8D3 /* Assets.xcassets */,
 				3A9E9CCF2800912300C7B8D3 /* LaunchScreen.storyboard */,
 				3A9E9CD22800912300C7B8D3 /* Info.plist */,
@@ -88,6 +88,22 @@
 				3A9E9CE12800992C00C7B8D3 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		3A9E9CE328010D4100C7B8D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A9E9CC82800912000C7B8D3 /* PlanDetailViewController.swift */,
+				3A9E9CD82800924B00C7B8D3 /* PlanPickerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A9E9CE428010D4C00C7B8D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -14,9 +14,7 @@ class PlanPickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        zoomButton.clipsToBounds = true
-        zoomButton.setImage(UIImage(named: "Icons_zoomOut"), for: UIControl.State.normal)
+
     }
     
     
