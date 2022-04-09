@@ -9,29 +9,36 @@ import UIKit
 
 class PlanPickerViewController: UIViewController {
     
-    var isMovedDown: Bool = false
+    @IBOutlet weak var zoomButton: UIButton!
+    var isMoveDown: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        zoomButton.clipsToBounds = true
+        zoomButton.setImage(UIImage(named: "Icons_zoomOut"), for: UIControl.State.normal)
     }
     
-    var originY:CGFloat = 0
-    @IBAction func tapToClose(_ sender: UIButton) {
-        
-        if isMovedDown {
+    
+    @IBAction func tapZoomButton(_ sender: UIButton) {
+        if isMoveDown == true {
+            
             UIView.transition(with: self.view, duration: 0.2, options: [.curveLinear], animations: {
                 self.view.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
             }, completion: nil)
-            isMovedDown = false
-            
+            zoomButton.setImage(UIImage(named: "Icons_zoomIn"), for: .selected)
+            zoomButton.frame = CGRect(x: UIScreen.width - 170, y: 400, width: 50, height: 50)
+            isMoveDown = false
         } else {
+
             UIView.transition(with: self.view, duration: 0.2, options: [.curveLinear], animations: {
                 self.view.frame = CGRect(x: 0, y: 450, width: UIScreen.width, height: UIScreen.height)
             }, completion: nil)
-            isMovedDown = true
+            zoomButton.setBackgroundImage(UIImage(named: "Icons_zoomOut"), for: .selected)
+            zoomButton.frame = CGRect(x: UIScreen.width - 170, y: 250, width: 50, height: 50)
+            
+            isMoveDown = true
         }
-        
-        
     }
     
 }

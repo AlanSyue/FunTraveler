@@ -38,12 +38,18 @@
                                     <constraint firstAttribute="height" constant="500" id="t1X-Tk-cMy"/>
                                 </constraints>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVm-Ss-mX1">
-                                <rect key="frame" x="327" y="306" width="62" height="31"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQg-tk-eNA">
+                                <rect key="frame" x="339" y="287" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Nay-vO-GrY"/>
+                                    <constraint firstAttribute="height" constant="50" id="ORj-sa-oer"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Zoom"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Icons_zoomOut" title="" imagePadding="0.0">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="tapToClose:" destination="vQp-QU-xvl" eventType="touchUpInside" id="gJP-Yo-jHw"/>
+                                    <action selector="tapZoomButton:" destination="vQp-QU-xvl" eventType="touchUpInside" id="mBC-Va-2PC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,18 +58,22 @@
                         <constraints>
                             <constraint firstItem="eCG-Dv-YsX" firstAttribute="trailing" secondItem="kE1-6t-6pR" secondAttribute="trailing" id="854-he-b50"/>
                             <constraint firstItem="kE1-6t-6pR" firstAttribute="leading" secondItem="eCG-Dv-YsX" secondAttribute="leading" id="HYP-kz-aUl"/>
-                            <constraint firstItem="eCG-Dv-YsX" firstAttribute="trailing" secondItem="JVm-Ss-mX1" secondAttribute="trailing" constant="25" id="O8a-6Y-1IK"/>
-                            <constraint firstItem="kE1-6t-6pR" firstAttribute="top" secondItem="JVm-Ss-mX1" secondAttribute="bottom" constant="25" id="ThQ-hj-MRU"/>
                             <constraint firstItem="eCG-Dv-YsX" firstAttribute="bottom" secondItem="kE1-6t-6pR" secondAttribute="bottom" id="g3A-M3-16w"/>
+                            <constraint firstItem="eCG-Dv-YsX" firstAttribute="trailing" secondItem="KQg-tk-eNA" secondAttribute="trailing" constant="25" id="tJo-Lo-Lpt"/>
+                            <constraint firstItem="kE1-6t-6pR" firstAttribute="top" secondItem="KQg-tk-eNA" secondAttribute="bottom" constant="25" id="zvx-gD-Ouc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="zoomButton" destination="KQg-tk-eNA" id="Q5e-sO-oHB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ex-9Z-0n0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4801" y="-108"/>
+            <point key="canvasLocation" x="4800" y="-108.48214285714285"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Icons_zoomOut" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
