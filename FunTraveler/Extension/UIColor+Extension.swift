@@ -9,13 +9,14 @@ import UIKit
 private enum STColor: String {
     
     case B2
+    case ThemeRed
     
 }
 
 extension UIColor {
 
     static let B2 = STColor(.B2)
-
+    static let ThemeRed = STColor(.ThemeRed)
     
     private static func STColor(_ color: STColor) -> UIColor? {
 

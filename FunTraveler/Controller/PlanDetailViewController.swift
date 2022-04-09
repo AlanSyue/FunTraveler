@@ -21,10 +21,10 @@ class PlanDetailViewController: UIViewController {
         self.view.addSubview(planPickerViewController.view)
 
         
-        let bottomView = UIView()
-        bottomView.frame = CGRect(x: 0, y: UIScreen.height - 80 , width: UIScreen.width, height: 80)
-        bottomView.backgroundColor = UIColor.B2
-        self.view.addSubview(bottomView)
+//        let bottomView = UIView()
+//        bottomView.frame = CGRect(x: 0, y: UIScreen.height - 80 , width: UIScreen.width, height: 80)
+//        bottomView.backgroundColor = UIColor.B2
+//        self.view.addSubview(bottomView)
     }
 
 

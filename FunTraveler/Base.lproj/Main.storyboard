@@ -32,14 +32,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kE1-6t-6pR">
-                                <rect key="frame" x="0.0" y="362" width="414" height="500"/>
+                                <rect key="frame" x="0.0" y="262" width="414" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="t1X-Tk-cMy"/>
+                                    <constraint firstAttribute="height" constant="600" id="t1X-Tk-cMy"/>
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQg-tk-eNA">
-                                <rect key="frame" x="329" y="277" width="60" height="60"/>
+                                <rect key="frame" x="329" y="177" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Nay-vO-GrY"/>
                                     <constraint firstAttribute="height" constant="60" id="ORj-sa-oer"/>
@@ -65,6 +65,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="kE1-6t-6pR" id="jnb-o4-1oo"/>
                         <outlet property="zoomButton" destination="KQg-tk-eNA" id="Q5e-sO-oHB"/>
                     </connections>
                 </viewController>
