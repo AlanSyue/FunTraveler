@@ -11,9 +11,9 @@ import UIKit
 enum ImageAsset: String {
 
     // Planning Page
-    case Icons_orderMarker
-    case Icons_zoomIn
-    case Icons_zoomOut
+    case orderMarker
+    case zoomIn
+    case zoomOut
 
 }
 

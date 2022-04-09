@@ -12,13 +12,12 @@ protocol PlanCardTableViewCellDelegate: AnyObject {
 }
 
 class PlanCardTableViewCell: UITableViewCell {
-    
+
     weak var delegate: PlanCardTableViewCellDelegate?
 
-    
     var durationTime: String?
-    
-    var times = ["1","1.5","2","2.5","3","3.5"]
+
+    var times = ["1", "1.5", "2", "2.5", "3", "3.5"]
 
     @IBOutlet weak var pickerView: TimePickerView!
     
@@ -36,12 +35,9 @@ class PlanCardTableViewCell: UITableViewCell {
         super.awakeFromNib()
         pickerView.pickerView.delegate = self
         pickerView.pickerView.dataSource = self
-        
-        //pickerView.datePicker.addTarget(self, action: #selector(tapToChangeDate), for: .valueChanged)
-        
+
         self.pickerView.timeTextField.text = "1小時"
     }
-    
     
     func layoutCell(
         startTime: String
@@ -50,32 +46,29 @@ class PlanCardTableViewCell: UITableViewCell {
         startTimeLabel.text = startTime
         
         do {
-            let date = try TimeManager.getDateFromString(dateFormat: "HH:mm", dateString: startTime, duration: Double(pickerView.timeTextField.text ?? "2.00") ?? 2.00)
+            let date = try TimeManager.getDateFromString(
+                dateFormat: "HH:mm", dateString: startTime, duration:
+                    Double(pickerView.timeTextField.text ?? "2.00") ?? 2.00)
             
             endTimeLabel.text = "\(date.endHours):\(date.endMinutes)"
-
 
         } catch let wrongError {
             print("Error message: \(wrongError),Please add correct time!")
         }
         
-        
- 
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        //print("Hello")
+        // print("Hello")
         self.pickerView.timeTextField.addTarget(self, action: #selector(tapToChangeDate), for: .valueChanged)
     }
     
     @objc func tapToChangeDate(datePicker: UIDatePicker) {
         
-        print("datePicker",datePicker)
-        print("pickerView.timeTextField.text",pickerView.timeTextField.text)
+        print("datePicker", datePicker)
     }
-    
     
 }
 
@@ -92,7 +85,6 @@ extension PlanCardTableViewCell: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "\(times[row])小時"
     }
-
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         

@@ -12,7 +12,6 @@ struct DayModel {
     let title: String
 }
 
-
 protocol SelectionViewDataSource: AnyObject {
     func configureNumberOfButton(_ selectionView: SelectionView) -> Int
     
@@ -31,9 +30,6 @@ protocol SelectionViewDataSource: AnyObject {
     @objc optional func shouldSelectedButton(_ selectionView: SelectionView, at index: Int) -> Bool
 }
 
-
-
-
 class SelectionView: UIView {
     
     let indicatorView = UIView()
@@ -42,39 +38,37 @@ class SelectionView: UIView {
     weak var dataSource: SelectionViewDataSource?
     weak var delegate: SelectionViewDelegate?
     
-    
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.backgroundColor = .clear
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         configureButton()
     }
     
-    
-    func configureButton(){
+    func configureButton() {
         guard let numberOfButton = dataSource?.configureNumberOfButton(self) else { return }
 
-        for i in 0...numberOfButton - 1 {
+        for num in 0...numberOfButton - 1 {
             // SET BUTTON POSITION
             let dayButton = UIButton()
             
             let width = UIScreen.main.bounds.width/CGFloat(numberOfButton) * 5/6
-            dayButton.frame = CGRect(x: CGFloat(i)*(width), y: 0, width: width, height: 40)
+            dayButton.frame = CGRect(x: CGFloat(num)*(width), y: 0, width: width, height: 40)
             
             dayButton.backgroundColor = .white
             
             // SET BUTTON TITLE
             let titleOfButton = dataSource?.configureDetailOfButton(self)
             
-            dayButton.setTitle("\(titleOfButton?[i].title ?? "")", for: .normal)
+            dayButton.setTitle("\(titleOfButton?[num].title ?? "")", for: .normal)
             
             // SET BUTTON TITLE COLOR & FONT
             let colorOfText = dataSource?.colorOfText() ?? .black
@@ -100,7 +94,7 @@ class SelectionView: UIView {
         
     }
     
-    @objc func tapDayButton(_ sender: UIButton){
+    @objc func tapDayButton(_ sender: UIButton) {
         
         guard let numberOfButton = dataSource?.configureNumberOfButton(self) else { return }
 

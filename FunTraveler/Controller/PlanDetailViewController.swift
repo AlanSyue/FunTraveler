@@ -13,19 +13,18 @@ class PlanDetailViewController: UIViewController {
         super.viewDidLoad()
         showPlanPicker()
     }
-    
+
     func showPlanPicker() {
-        guard let planPickerViewController = storyboard!.instantiateViewController(withIdentifier: UIStoryboard.planPickerVC) as? PlanPickerViewController else { return }
+        guard let planPickerViewController = storyboard?.instantiateViewController(
+            withIdentifier: UIStoryboard.planPickerVC) as? PlanPickerViewController else { return }
         addChild(planPickerViewController)
         view.addSubview(planPickerViewController.view)
 
         // ADD BOTTOM VIEW
         let bottomView = UIView()
-        bottomView.frame = CGRect(x: 0, y: UIScreen.height - 80 , width: UIScreen.width, height: 80)
-        bottomView.backgroundColor = UIColor.B2
+        bottomView.frame = CGRect(x: 0, y: UIScreen.height - 80, width: UIScreen.width, height: 80)
+        bottomView.backgroundColor = UIColor.themeApricotDeep
         self.view.addSubview(bottomView)
     }
 
-
 }
-

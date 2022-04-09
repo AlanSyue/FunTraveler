@@ -16,8 +16,8 @@ class PlanPickerViewController: UIViewController {
         DayModel(color: .green, title: "第三天"),
         DayModel(color: .green, title: "第四天")
     ]
-    var times = ["1小時","1.5小時","2小時","2.5小時","3小時","3.5小時"]
-    
+    var times = ["1小時", "1.5小時", "2小時", "2.5小時", "3小時", "3.5小時"]
+
     var planCard = ["1","2","3","4","5"] {
         didSet {
             tableView.reloadData()
@@ -25,14 +25,13 @@ class PlanPickerViewController: UIViewController {
         }
     }
     let scheduleButton = UIButton()
-    
-    
+
     @IBOutlet weak var tableView: UITableView! {
         
         didSet {
             
             tableView.dataSource = self
-            
+
             tableView.delegate = self
 
         }
@@ -49,56 +48,56 @@ class PlanPickerViewController: UIViewController {
     }
     
     func addScheduleButton() {
-        scheduleButton.backgroundColor = UIColor.ThemeRed
+        scheduleButton.backgroundColor = UIColor.themeRed
         scheduleButton.setTitle("+", for: .normal)
         scheduleButton.addTarget(target, action: #selector(tapScheduleButton), for: .touchUpInside)
         self.view.addSubview(scheduleButton)
         layoutOfScheduleButton()
         
     }
-    
+
     func layoutOfScheduleButton() {
         scheduleButton.translatesAutoresizingMaskIntoConstraints = false
-        scheduleButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor,constant: 0).isActive = true
+        scheduleButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0).isActive = true
 //        scheduleButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,constant: 500).isActive = true
-        scheduleButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor,constant: 320).isActive = true
+        scheduleButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 320).isActive = true
         scheduleButton.widthAnchor.constraint(equalToConstant: self.view.bounds.width * 2/3 ).isActive = true
         scheduleButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
-    
+
     @objc func tapScheduleButton() {
         planCard.append("new")
         tableView.reloadData()
         
     }
     
-    
     @IBAction func tapZoomButton(_ sender: UIButton) {
         if isMoveDown == true {
             UIView.transition(with: self.view, duration: 0.2, options: [.curveLinear], animations: {
                 self.view.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
             }, completion: nil)
-            zoomButton.setImage(UIImage(named: "Icons_zoomIn"), for: .selected)
+            
+
+            zoomButton.setImage(UIImage.asset(.zoomIn), for: .selected)
             zoomButton.frame = CGRect(x: UIScreen.width - 170, y: 400, width: 50, height: 50)
             isMoveDown = false
         } else {
             UIView.transition(with: self.view, duration: 0.2, options: [.curveLinear], animations: {
                 self.view.frame = CGRect(x: 0, y: 550, width: UIScreen.width, height: UIScreen.height)
             }, completion: nil)
-            zoomButton.setBackgroundImage(UIImage(named: "Icons_zoomOut"), for: .selected)
+            zoomButton.setBackgroundImage(UIImage.asset(.zoomIn), for: .selected)
             zoomButton.frame = CGRect(x: UIScreen.width - 170, y: 250, width: 50, height: 50)
-            
+
             isMoveDown = true
         }
     }
     
 }
 
-
 extension PlanPickerViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - Section Header
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
+ 
         return 200.0
     }
     
@@ -107,29 +106,31 @@ extension PlanPickerViewController: UITableViewDataSource, UITableViewDelegate {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(
                 withIdentifier: PlanCardHeaderView.identifier)
         as? PlanCardHeaderView else { return nil }
-        
+
         headerView.titleLabel.text = "小琉球潛水之旅"
         headerView.dateLabel.text = "2022年10月06日- 2022年10月08日"
-        
+
         headerView.selectionView.delegate = self
         headerView.selectionView.dataSource = self
-        
+
         return headerView
     }
-    
+
     // MARK: - Section Row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         planCard.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier:  "\(PlanCardTableViewCell.self)", for: indexPath) as? PlanCardTableViewCell else { return UITableViewCell() }
+
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: String(describing: PlanCardTableViewCell.self), for: indexPath)
+                as? PlanCardTableViewCell else { return UITableViewCell() }
         cell.selectionStyle = .none
         cell.nameLabel.text = "景福宮"
         cell.addressLabel.text = "保安三街8-1號"
         cell.layoutCell(startTime: "09:30")
-        
+
         return cell
     }
 
