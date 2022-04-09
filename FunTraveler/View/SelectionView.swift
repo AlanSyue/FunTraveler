@@ -45,10 +45,12 @@ class SelectionView: UIView {
     
     override init(frame: CGRect){
         super.init(frame: frame)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.backgroundColor = .clear
     }
     
     override func layoutSubviews() {
@@ -60,32 +62,30 @@ class SelectionView: UIView {
     func configureButton(){
         guard let numberOfButton = dataSource?.configureNumberOfButton(self) else { return }
 
-        //let numberOfButton = dataSource?.configureNumberOfButton(self) ?? 2 //?
-        
         for i in 0...numberOfButton - 1 {
             // SET BUTTON POSITION
-            let colorButton = UIButton()
+            let dayButton = UIButton()
             
             let width = UIScreen.main.bounds.width/CGFloat(numberOfButton) * 5/6
-            colorButton.frame = CGRect(x: CGFloat(i)*(width), y: 0, width: width, height: 50)
+            dayButton.frame = CGRect(x: CGFloat(i)*(width), y: 0, width: width, height: 40)
             
-            colorButton.backgroundColor = .white
+            dayButton.backgroundColor = .white
             
             // SET BUTTON TITLE
             let titleOfButton = dataSource?.configureDetailOfButton(self)
             
-            colorButton.setTitle("\(titleOfButton?[i].title ?? "")", for: .normal)
+            dayButton.setTitle("\(titleOfButton?[i].title ?? "")", for: .normal)
             
             // SET BUTTON TITLE COLOR & FONT
             let colorOfText = dataSource?.colorOfText() ?? .black
             
-            colorButton.setTitleColor(colorOfText, for: .normal)
+            dayButton.setTitleColor(colorOfText, for: .normal)
             
-            colorButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            dayButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             
-            colorButton.addTarget(self, action: #selector(tapColorButton), for: .touchUpInside)
+            dayButton.addTarget(self, action: #selector(tapDayButton), for: .touchUpInside)
             
-            self.addSubview(colorButton)
+            self.addSubview(dayButton)
             
             // SET INDICATOR
             indicatorView.frame = CGRect(x: 0, y: 45, width: width, height: 3)
@@ -100,7 +100,7 @@ class SelectionView: UIView {
         
     }
     
-    @objc func tapColorButton(_ sender: UIButton){
+    @objc func tapDayButton(_ sender: UIButton){
         
         guard let numberOfButton = dataSource?.configureNumberOfButton(self) else { return }
 

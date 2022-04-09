@@ -8,7 +8,8 @@
 import UIKit
 
 class PlanPickerViewController: UIViewController {
-    
+    var isMoveDown: Bool = false
+
     let daySource = [
         DayModel(color: .red, title: "第一天"),
         DayModel(color: .yellow, title: "第二天"),
@@ -16,6 +17,7 @@ class PlanPickerViewController: UIViewController {
         DayModel(color: .green, title: "第四天")
     ]
     var times = ["1小時","1.5小時","2小時","2.5小時","3小時","3.5小時"]
+    
     var planCard = ["1","2","3","4","5"] {
         didSet {
             tableView.reloadData()
@@ -32,43 +34,34 @@ class PlanPickerViewController: UIViewController {
             tableView.dataSource = self
             
             tableView.delegate = self
-            
+
         }
     }
     
     @IBOutlet weak var zoomButton: UIButton!
-    var isMoveDown: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerHeaderWithNib(identifier: String(describing: PlanCardHeaderView.self), bundle: nil)
-
         tableView.registerCellWithNib(identifier: String(describing: PlanCardTableViewCell.self), bundle: nil)
-
         addScheduleButton()
 
     }
     
-    let bottomView = UIView()
-
     func addScheduleButton() {
-        let height: CGFloat = 80
-        bottomView.frame = CGRect(x: 0, y: UIScreen.height - height , width: UIScreen.width, height: height)
-        bottomView.backgroundColor = UIColor.B2
-        self.view.addSubview(bottomView)
-        
         scheduleButton.backgroundColor = UIColor.ThemeRed
         scheduleButton.setTitle("+", for: .normal)
         scheduleButton.addTarget(target, action: #selector(tapScheduleButton), for: .touchUpInside)
-        bottomView.addSubview(scheduleButton)
+        self.view.addSubview(scheduleButton)
         layoutOfScheduleButton()
+        
     }
     
     func layoutOfScheduleButton() {
         scheduleButton.translatesAutoresizingMaskIntoConstraints = false
         scheduleButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor,constant: 0).isActive = true
-        
-        scheduleButton.centerYAnchor.constraint(equalTo: bottomView.centerYAnchor,constant: 0).isActive = true
+//        scheduleButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,constant: 500).isActive = true
+        scheduleButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor,constant: 320).isActive = true
         scheduleButton.widthAnchor.constraint(equalToConstant: self.view.bounds.width * 2/3 ).isActive = true
         scheduleButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }

@@ -14,7 +14,29 @@ class PlanCardHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var dateLabel: UILabel!
    
     @IBOutlet weak var selectionView: SelectionView!
+    
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+    
+        setupHeaderView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        setupHeaderView()
+    }
   
+    private func setupHeaderView() {
+        contentView.backgroundColor = UIColor.B2
+        
+        contentView.layer.cornerRadius = 40
+        contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+
+        
+    }
    
+    
+    
 }
 
